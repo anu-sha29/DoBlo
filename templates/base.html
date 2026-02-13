@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DoBlo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='Doblo.png') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <img src="{{ url_for('static', filename='Doblo.png') }}" alt="DoBlo Icon" class="app-icon">
+      <h1 class="app-title">DoBlo</h1>
+      <h2 class="app-subtitle">Hope in Every Drop</h2>
+    </header>
+
+    <section class="content-section">
+      {% block content %}{% endblock %}
+    </section>
+  </div>
+</body>
+</html>

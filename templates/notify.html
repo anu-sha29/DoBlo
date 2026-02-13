@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Notification</h2>
+
+<div class="notification-box">
+  <p class="notification-message">{{ message }}</p>
+
+  {% if donors %}
+    <h3>Matching Donors</h3>
+    <ul class="donor-list">
+      {% for d in donors %}
+        <li>
+          <span class="donor-name">{{ d.name }}</span>
+          <span class="donor-group">({{ d.blood_group }})</span>
+          <span class="donor-phone">📞 {{ d.phone }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+<div class="button-group">
+  <button onclick="location.href='/'" class="submit-btn">⬅ Back to Home</button>
+</div>
+{% endblock %}

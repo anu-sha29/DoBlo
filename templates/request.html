@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Blood Request</h2>
+<form method="POST" class="request-form">
+  <label for="blood_group">Blood Group</label>
+  <select id="blood_group" name="blood_group" required>
+    <option>O+</option><option>O-</option><option>A+</option><option>A-</option>
+    <option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
+  </select>
+
+  <label for="units">Units Required</label>
+  <select id="units" name="units" required>
+    <option>1</option><option>2</option><option>3</option><option>4</option>
+  </select>
+
+  <label for="urgency">Urgency</label>
+  <select id="urgency" name="urgency" required>
+    <option>Emergency</option>
+    <option>Urgent</option>
+    <option>Planned</option>
+  </select>
+
+  <button type="submit" class="submit-btn">📢 Find Donors</button>
+</form>
+{% endblock %}

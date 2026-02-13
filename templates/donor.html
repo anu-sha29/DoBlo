@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DoBlo - Donor Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <img src="{{ url_for('static', filename='Doblo.png') }}" alt="DoBlo Icon" class="app-icon">
+      <h1 class="app-title">DoBlo</h1>
+      <h2 class="app-subtitle">Hope in Every Drop</h2>
+    </header>
+
+    <section class="form-section">
+      <h2>Donor Registration</h2>
+      <form method="POST" class="donor-form">
+        <!-- Basic details -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter your weight" required>
+
+        <!-- Eligibility questions -->
+        <label>Have you donated blood in the last 3 months?</label>
+        <select name="recent_donation" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <label>Are you currently taking any medication?</label>
+        <select name="medication" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <label>Do you have any chronic illnesses (e.g., diabetes, heart disease)?</label>
+        <select name="chronic_illness" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <label>Have you had any major surgery in the last 6 months?</label>
+        <select name="recent_surgery" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <label>Do you currently have fever, cold, or infection?</label>
+        <select name="infection" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <label>Are you pregnant or breastfeeding?</label>
+        <select name="pregnancy" required>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Check Eligibility</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
