@@ -7,15 +7,28 @@
 
   {% if donors %}
     <h3>Matching Donors</h3>
-    <ul class="donor-list">
-      {% for d in donors %}
-        <li>
-          <span class="donor-name">{{ d.name }}</span>
-          <span class="donor-group">({{ d.blood_group }})</span>
-          <span class="donor-phone">📞 {{ d.phone }}</span>
-        </li>
-      {% endfor %}
-    </ul>
+    <table class="donor-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Blood Group</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in donors %}
+        <tr>
+          <td>{{ d.name }}</td>
+          <td>{{ d.blood_group }}</td>
+          <td>{{ d.phone }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    {% if "Matching donors" in message %}
+      <p>No matching donors found in the database.</p>
+    {% endif %}
   {% endif %}
 </div>
 

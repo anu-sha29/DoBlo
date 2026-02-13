@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import sqlite3
-from datetime import datetime
 
 app = Flask(__name__)
 
@@ -11,11 +10,13 @@ def init_db():
     c.execute("""CREATE TABLE IF NOT EXISTS donors (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT,
+                    dob TEXT,
                     age INTEGER,
                     weight INTEGER,
                     blood_group TEXT,
                     phone TEXT,
-                    last_donation TEXT
+                    last_donation TEXT,
+                    UNIQUE(name, dob, phone)  -- prevents duplicate registrations
                 )""")
     conn.commit()
     conn.close()
@@ -32,12 +33,14 @@ def index():
 def donor():
     if request.method == "POST":
         name = request.form.get("name")
+        dob = request.form.get("dob")
         age = int(request.form.get("age"))
         weight = int(request.form.get("weight"))
         blood_group = request.form.get("blood_group")
         phone = request.form.get("phone")
         last_donation = request.form.get("last_donation")
 
+        # Eligibility checks
         recent_donation = request.form.get("recent_donation")
         medication = request.form.get("medication")
         chronic_illness = request.form.get("chronic_illness")
@@ -45,7 +48,6 @@ def donor():
         infection = request.form.get("infection")
         pregnancy = request.form.get("pregnancy")
 
-        # Eligibility logic
         eligible = True
         if age < 18 or weight < 50:
             eligible = False
@@ -58,17 +60,24 @@ def donor():
         elif pregnancy == "yes":
             eligible = False
 
+        conn = sqlite3.connect("donors.db")
+        c = conn.cursor()
+
         if eligible:
-            # Save donor to database
-            conn = sqlite3.connect("donors.db")
-            c = conn.cursor()
-            c.execute("INSERT INTO donors (name, age, weight, blood_group, phone, last_donation) VALUES (?, ?, ?, ?, ?, ?)",
-                      (name, age, weight, blood_group, phone, last_donation))
-            conn.commit()
-            conn.close()
-            return render_template("notify.html", message="✅ You are eligible and registered as a donor!")
+            try:
+                c.execute("""INSERT INTO donors (name, dob, age, weight, blood_group, phone, last_donation)
+                             VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                          (name, dob, age, weight, blood_group, phone, last_donation))
+                conn.commit()
+                message = "✅ You are eligible and registered as a donor!"
+            except sqlite3.IntegrityError:
+                # Duplicate detected
+                message = "⚠️ You are already registered. Duplicate registration not allowed."
         else:
-            return render_template("notify.html", message="❌ Not eligible to donate.")
+            message = "❌ Not eligible to donate."
+
+        conn.close()
+        return render_template("notify.html", message=message)
 
     return render_template("donor.html")
 
@@ -86,8 +95,11 @@ def blood_request():
         donors = c.fetchall()
         conn.close()
 
-        # Simple compatibility check (can be expanded)
-        eligible_donors = [ {"name": d[0], "blood_group": d[1], "phone": d[2]} for d in donors if d[1] == blood_group ]
+        # Simple compatibility check (exact match for now)
+        eligible_donors = [
+            {"name": d[0], "blood_group": d[1], "phone": d[2]}
+            for d in donors if d[1] == blood_group
+        ]
 
         return render_template("notify.html",
                                message=f"🚨 Matching donors for {blood_group}, {units} units ({urgency})",
