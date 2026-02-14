@@ -205,7 +205,7 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 
 **Basic Usage:**
 ```bash
-python script.py [options] [arguments]
+python app.py [options] [arguments]
 ```
 
 **Available Commands:**
@@ -298,12 +298,11 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[https://drive.google.com/file/d/1wZozSbNCDynmszkFNmlQcgf2bbbrDfuY/view?usp=drive_link]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+*The video demonstrates the working of DoBlo website. How the donor registration and blood request are carried out*
 
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
+
 
 ---
 
@@ -311,19 +310,21 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** [lenovo copilot, gemini, chatgpt]
 
 **Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
-
+- Debugging deployment errors (Render port binding issue)
+- Writing documentation
+- UI improvement suggestions
+- Git conflict troubleshooting
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+"Fix Render port scan timeout error"
 
-**Percentage of AI-generated code:** [Approximately X%]
+"Create DoBlo website README"
+
+"Resolve Git unrelated histories error"
+
+**Percentage of AI-generated code:** [Approximately 35%]
 
 **Human Contributions:**
 - Architecture design and planning
@@ -337,9 +338,14 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Anagha S S]: [- Designed and implemented the backend logic using Flask
+- Created the SQLite database schema for donor registration and request matching
+- Developed the eligibility tracker rules (age, weight, donation history, medical conditions)
+- Integrated donor registration with duplicate detection (name + DOB + phone)]
+- [Anannya I]: [- Designed and implemented the backend logic using Flask
+- Created the SQLite database schema for donor registration and request matching
+- Developed the eligibility tracker rules (age, weight, donation history, medical conditions)
+- Integrated donor registration with duplicate detection (name + DOB + phone)]
 
 ---
 
