@@ -6,23 +6,23 @@
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Eclipse]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Anagha S S] - [LBSITW]
+- Member 2: [Anannya I] - [LBSITW]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[In the world of emergency medicines, the difference between a life saved and a life lost is often measured in minutes.While the total number of potential donors is often sufficient, the lack of unified,real time co-ordination leads to delay in life saving trasfusions.A platform that act as the real time bridge between those in urgent need of blood and a verified network of local donors.Matching and tiered urgency levels, Health vault, eligibility tracker, location privacy and smart notification system are our key features.Donors are gifted with different levels of hero badges to add to the uniqueness of the platform]
 
 ### The Problem statement
-[What problem are you solving?]
+[In the world of emergency medicines, the difference between a life saved and a life lost is often measured in minutes.While the total number of potential donors is often sufficient, the lack of unified,real time co-ordination leads to delay in life saving trasfusions.]
 
 ### The Solution
-[How are you solving it?]
+[A platform that act as the real time bridge between those in urgent need of blood and a verified network of local donors.Matching and tiered urgency levels, eligibility tracker, location privacy and smart notification system are our key features.Donors are gifted with different levels of hero badges to add to the uniqueness of the platform]
 
 ---
 
@@ -31,10 +31,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [ HTML, Python, css]
+- Frameworks used: [Flask]
+- Libraries used: [sqlite3, datetime]
+- Tools used: [ VS Code, Git,Git hub]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +46,13 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Matching blood types with tiered urgency levels
+- Donor eligibility tracker
+- Smart notifications for requests
+- Privacy‑protected donor information
+- Hero badge system for donors
+
+
 
 ---
 
@@ -67,13 +70,6 @@ List the key features of your project:
 [Run commands - e.g., npm start, python app.py]
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
 
 ---
 
@@ -83,14 +79,20 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+!["C:\Users\Anagha S S\Desktop\Photo\start.png"]
+*starting interface of DoBlo*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+!["C:\Users\Anagha S S\Desktop\Photo\donor.png"]
+*Donor registration*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+!["C:\Users\Anagha S S\Desktop\Photo\eligibility.png"]
+*donor eligibility notification*
+
+!["C:\Users\Anagha S S\Desktop\Photo\request.png"]
+*blood donor request*
+
+!["C:\Users\Anagha S S\Desktop\Photo\matching.png"]
+*donor matching using database*
 
 #### Diagrams
 
@@ -101,33 +103,12 @@ List the key features of your project:
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+!["C:\Users\Anagha S S\Desktop\Photo\work flow diagram.png"]
+*two options are there in the beginning whether the user is a donor or someone needing blood. The donor details are collected and stored in database for future use.When a person requests blood te data from database is used for fetching and matching the suitable donor*
 
 ---
 
-### For Hardware:
 
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ---
 
@@ -179,7 +160,7 @@ List the key features of your project:
 
 #### App Flow Diagram
 
-![App Flow](docs/app-flow.png)
+!["C:\Users\Anagha S S\Desktop\Photo\Doblo navigation structure.png"](docs/app-flow.png)
 *Explain the user flow through your application*
 
 #### Installation Guide
